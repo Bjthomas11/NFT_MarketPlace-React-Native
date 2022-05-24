@@ -1,26 +1,22 @@
 import HomeHeader from "./HomeHeader";
-import FocusedStatusBar from "./FocusedStatusBar";
 import NFTCard from "./NFTCard";
-import { CircleButton, RectButton } from "./Button";
-import {
-  EthPrice,
-  ImageCmp,
-  NFTTitle,
-  People,
-  EndDate,
-  SubInfo
-} from "./SubInfo";
+import { RectButton, CircleButton } from "./Button";
+import { SubInfo, People, EndDate, EthPrice, NFTTitle } from "./SubInfo";
+import DetailsBid from "./DetailsBid";
+import FocusedStatusBar from "./FocusedStatusBar";
+import DetailsDesc from "./DetailsDesc";
 
 export {
   HomeHeader,
-  FocusedStatusBar,
   NFTCard,
-  CircleButton,
-  RectButton,
-  EthPrice,
-  ImageCmp,
-  NFTTitle,
+  SubInfo,
   People,
   EndDate,
-  SubInfo
+  RectButton,
+  CircleButton,
+  EthPrice,
+  NFTTitle,
+  DetailsBid,
+  FocusedStatusBar,
+  DetailsDesc
 };

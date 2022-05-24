@@ -1,6 +1,7 @@
-import { View, Text, Image } from "react-native";
 import React from "react";
-import { SIZES, COLORS, FONTS, SHADOWS, assets } from "../constants";
+import { View, Image, Text } from "react-native";
+
+import { SIZES, FONTS, COLORS, SHADOWS, assets } from "../constants";
 
 export const NFTTitle = ({ title, subTitle, titleSize, subTitleSize }) => {
   return (
@@ -21,7 +22,7 @@ export const NFTTitle = ({ title, subTitle, titleSize, subTitleSize }) => {
           color: COLORS.primary
         }}
       >
-        {subTitle}
+        by {subTitle}
       </Text>
     </View>
   );
@@ -29,20 +30,11 @@ export const NFTTitle = ({ title, subTitle, titleSize, subTitleSize }) => {
 
 export const EthPrice = ({ price }) => {
   return (
-    <View
-      style={{
-        flexDirection: "row",
-        alignItems: "center"
-      }}
-    >
+    <View style={{ flexDirection: "row", alignItems: "center" }}>
       <Image
         source={assets.eth}
         resizeMode="contain"
-        style={{
-          width: 20,
-          height: 20,
-          marginRight: 2
-        }}
+        style={{ width: 20, height: 20, marginRight: 2 }}
       />
       <Text
         style={{
@@ -57,7 +49,7 @@ export const EthPrice = ({ price }) => {
   );
 };
 
-export const ImageCmp = ({ imgUrl, index }) => {
+const ImageCmp = ({ imgUrl, index }) => {
   return (
     <Image
       source={imgUrl}
@@ -76,7 +68,7 @@ export const People = () => {
     <View style={{ flexDirection: "row" }}>
       {[assets.person02, assets.person03, assets.person04].map(
         (imgUrl, index) => (
-          <ImageCmp imgUrl={imgUrl} index={index} key={index} />
+          <ImageCmp imgUrl={imgUrl} index={index} key={`People-${index}`} />
         )
       )}
     </View>
@@ -90,7 +82,7 @@ export const EndDate = () => {
         paddingHorizontal: SIZES.font,
         paddingVertical: SIZES.base,
         backgroundColor: COLORS.white,
-        borderRadius: 3,
+        borderRadius: SIZES.font,
         justifyContent: "center",
         alignItems: "center",
         ...SHADOWS.light,
@@ -105,7 +97,7 @@ export const EndDate = () => {
           color: COLORS.primary
         }}
       >
-        Ending In
+        Ending in
       </Text>
       <Text
         style={{
